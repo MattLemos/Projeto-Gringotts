@@ -11,9 +11,10 @@ class Block {
                 string receiver;        // nome do usuario que recebeu a quantia
                 string value;           // quantia
                 int prev_hash;
-                int hash;
+
 
         public:
+                int hash;
                 void setTransaction(string sender, string receiver, string value, int prev_hash, int hash);
                 vector<string> getTransaction();
                 void printTransaction();
