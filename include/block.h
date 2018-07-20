@@ -3,21 +3,26 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include "sha256.h"
 using namespace std;
 
 class Block {
         private:
+                // variaveis
                 string sender;          // nome do usuario que enviou a quantia
                 string receiver;        // nome do usuario que recebeu a quantia
-                string value;           // quantia
-                int prev_hash;
-                int hash;
-
+                int value;           // quantia
+                string prev_hash;
+                string hash;
         public:
-                void setTransaction(string sender, string receiver, string value, int prev_hash, int hash);
+                  // métodos
+                void setSender(string sender);
+                void setReceiver(string receiver);
+                void setValue(int value);
+                void setHashes(string hash);
+                string getHash();
                 vector<string> getTransaction();
                 void printTransaction();
-
 };
 
 #endif
