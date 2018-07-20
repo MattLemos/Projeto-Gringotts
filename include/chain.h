@@ -1,7 +1,7 @@
 #ifndef CHAIN_H
 #define CHAIN_H
 #include "block.h"
-#include<list>
+#include <list>
 using namespace std;
 
 class Chain {

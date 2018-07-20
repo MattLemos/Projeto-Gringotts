@@ -15,12 +15,13 @@ void Block::setValue(int value) {
 }
 
 
-void Block::setHashes(int prev_hash) {
+void Block::setHashes(string prev_hash) {
         this->prev_hash = prev_hash;
-        this->hash = this->prev_hash + 1;
+        char* temp = (char*)this->prev_hash.c_str();
+        this->hash = sha256(temp);
 }
 
-int Block::getHash() {
+string Block::getHash() {
         return this->hash;
 }
 

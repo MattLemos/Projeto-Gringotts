@@ -6,13 +6,13 @@ Chain::Chain(string gen_sender, string gen_receiver, int gen_value) {
         genesis.setSender(gen_sender);
         genesis.setReceiver(gen_receiver);
         genesis.setValue(gen_value);
-        genesis.setHashes(0);
+        genesis.setHashes("8f83b1657ff1fc53b92dc18148a1d65dfc2d4b1fa3d677284addd200126d9069");
         this->pushTransaction(genesis);
 }
 
 void Chain::setTransaction(string sender, string receiver, int value) {
         Block transaction;
-        int last_hash;
+        string last_hash;
         transaction.setSender(sender);
         transaction.setReceiver(receiver);
         transaction.setValue(value);
