@@ -1,16 +1,11 @@
 #include "../include/chain.h"
 
 int main() {
-        Chain* transactions = new Chain();
-        Block genesis;
-        Block second;
-        Block third;
-        genesis.setTransaction("matheus","marcelo","5",0,1);
-        second.setTransaction("marcelo","matheus","10",1,2);
-        third.setTransaction("sandy","junior","15",2,3);
-        transactions->insertTransaction(genesis);
-        transactions->insertTransaction(second);
-        transactions->insertTransaction(third);
+        Chain* transactions = new Chain("none","none",0);
+        transactions->setTransaction("matheus","marcelo",5);
+        transactions->setTransaction("matheus","lemos",10);
+        transactions->setTransaction("texugo","lemos",10);
+        transactions->setTransaction("texugo","texugo",15);
         transactions->printChain();
         return 0;
 }

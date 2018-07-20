@@ -8,8 +8,12 @@ class Chain {
         private:
                 list<Block> blockchain;
         public:
-                void insertTransaction(Block transaction);
+                Chain(string gen_sender, string gen_receiver, int gen_value);
+                void pushTransaction(Block transaction);
+                void setTransaction(string sender, string receiver, int value);
                 void printChain();
 };
+
+
 
 #endif
