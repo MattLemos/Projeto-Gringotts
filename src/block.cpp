@@ -17,8 +17,10 @@ void Block::setValue(int value) {
 
 void Block::setHashes(string prev_hash) {
         this->prev_hash = prev_hash;
-        char* temp = (char*)this->prev_hash.c_str();
-        this->hash = sha256(temp);
+        string values = this->sender+this->receiver+to_string(this->value)+this->prev_hash;
+        char* final_string = (char*)(values.c_str());
+
+        this->hash = sha256(final_string);
 }
 
 string Block::getHash() {
